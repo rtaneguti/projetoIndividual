@@ -56,7 +56,7 @@ body {
     display: flex;
     height: 500px;
     width: 100%;
-    background-color:var(--branco); /*#ECF2F4*/
+    background-color:var(--preto); /*#ECF2F4*/
     background-size: cover;
     justify-content: center;
     align-items: center;
@@ -80,6 +80,19 @@ body {
     font-size: 24px;
 }
 
+.card-card-cadastro{
+    padding: 10px 10px;
+    height: 100%;
+    width: 650px;
+    margin: 0;
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--verde);
+    border-radius: 10px;
+}
 
 .formulario {
     display: flex;
@@ -89,7 +102,7 @@ body {
 }
 
 .campo {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .botao {
@@ -113,7 +126,7 @@ input {
     padding-left: 10px;
     outline: none;
     font-size: 14px;
-    text-align: center;
+    text-align: left;
 }
 
 /*FOOTER*/

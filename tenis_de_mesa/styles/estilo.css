@@ -1,0 +1,139 @@
+/* Adicionar aqui toda a estilização criada para sua aplicação. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --verde: #008973 ;
+    --azul: #00bcd4;
+    --branco: #ffffff;
+    --preto: #000000;
+}
+
+/*HEADER*/
+.header {
+    background-color: var(--verde);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+    height: 100px;
+}
+
+.titulo {
+    color: var(--branco);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    color: var(--branco);
+    list-style: none;
+    width: 300px;
+}
+
+.navbar a {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.agora {
+    font-weight: bold;
+}
+
+.login {
+    display: flex;
+    height: 500px;
+    width: 100%;
+    background-color:var(--branco); /*#ECF2F4*/
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-card-login {
+    padding: 10px 10px;
+    height: 320px;
+    width: 520px;
+    margin: 0;
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--verde);
+    border-radius: 10px;
+}
+
+.card-card-login h2 {
+    font-size: 24px;
+}
+
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.botao {
+    width: 120px;
+    height: 25px;
+    background-color:var(--branco);
+    font-weight: bold;
+    color: var(--preto);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0.3);
+    margin-top: 10px;
+}
+
+input {
+    width: 400px;
+    height: 30px;
+    border: 2px solid #00bcd4;
+    border-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+/*FOOTER*/
+
+.footer {
+    height: 120px;
+    width: 100%;
+    background-color: var(--verde);
+}
+
+.footer .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--branco);
+}
+
+.footer h4 {
+    margin-bottom: 0;
+}

@@ -15,7 +15,7 @@ body {
     --verde: #008973 ;
     --azul: #00bcd4;
     --branco: #ffffff;
-    --preto: #000000;
+    --azul_marinho: #00446d;
 }
 
 /*HEADER*/
@@ -56,7 +56,7 @@ body {
     display: flex;
     height: 500px;
     width: 100%;
-    background-color:var(--preto); /*#ECF2F4*/
+    background-color:var(--azul_marinho); /*#ECF2F4*/
     background-size: cover;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,7 @@ body {
     height: 25px;
     background-color:var(--branco);
     font-weight: bold;
-    color: var(--preto);
+    color: var(--azul_marinho);
     border: none;
     border-radius: 5px;
     cursor: pointer;

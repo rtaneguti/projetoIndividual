@@ -83,6 +83,7 @@ section:not(:last-of-type) {
 .part1 {
     background-color: var(--azul_marinho);
     justify-content: start;
+    
 }
 
 .box1 {

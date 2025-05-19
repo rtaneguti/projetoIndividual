@@ -1,0 +1,290 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde: #008973;
+    --branco: #ffffff;
+    --azul_marinho: #00446d;
+    --laranja-vibrante: #FF6600;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--branco); 
+}
+
+/* LAYOUT GERAL DAS SEÇÕES */
+
+section {
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+section:not(.linhadotempo) {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+section:not(:last-of-type) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* HEADER */
+
+.header {
+    background-color: var(--verde);
+    padding-bottom: 10px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+    height: 100px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+
+.titulo {
+    color: var(--branco);
+    font-size: 36px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    color: var(--branco);
+    list-style: none;
+    width: 300px;
+}
+
+.navbar a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.agora {
+    font-weight: bold;
+}
+
+/* PART1 */
+
+.part1 {
+    background-color: var(--azul_marinho);
+    justify-content: start;
+}
+
+.box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.boxText1 {
+    margin: 0 10%;
+    text-align: center;
+}
+
+.boxText1 p {
+    font-size: 18px;
+    text-align: justify;
+}
+
+.boxIMG {
+    margin-right: 5%;
+}
+
+.part1IMG {
+    width: 600px;
+    height: auto;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+/* PART2 */
+
+.part2 {
+    background-color: var(--verde); 
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.box2 {
+    margin-left: 5%;
+    width: 40%;
+}
+
+.part2IMG {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10%;
+}
+
+.textos1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.box2paragrafo1 {
+    font-size: 18px;
+    text-align: justify;
+}
+
+/* PART3 */
+
+.part3 {
+    background-color: var(--azul_marinho); 
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.box3 {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.part3IMG {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.textos3 {
+    width: 40%;
+}
+
+.boxText3 p {
+    font-size: 18px;
+    text-align: justify;
+}
+
+/* PART4 */
+
+.part4 {
+    background-color: var(--azul_marinho);
+    justify-content: space-around;
+}
+
+.box4 {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.part4IMG {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.boxText4 {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxText4 p {
+    font-size: 18px;
+    text-align: justify;
+}
+
+/* BOTÃO*/
+
+.botao-pong {
+    background-color: var(--laranja-vibrante);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botao-pong:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+}
+
+
+/* LINHA DO TEMPO*/
+
+.linhadotempo {
+    background: linear-gradient(135deg, #00446d, #008973);
+    padding: 60px 0;
+}
+
+.cards-linhadotempo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-stories {
+    width: 220px;
+    height: 415px;
+    background-color: rgba(0, 68, 109, 0.85); 
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-stories:hover {
+    transform: scale(1.05);
+}
+
+.card-stories img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-stories-conteudo {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+.img-ajustada {
+    object-position: top; 
+}
+
+/* FOOTER */
+
+.footer {
+    height: 120px;
+    background-color: var(--verde);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer h4, .footer p {
+    color: var(--branco);
+}

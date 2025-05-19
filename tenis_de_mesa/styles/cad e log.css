@@ -31,6 +31,12 @@ body {
     height: 100px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+
 .titulo {
     color: var(--branco);
 }
@@ -46,6 +52,7 @@ body {
 .navbar a {
     color: var(--branco);
     text-decoration: none;
+    font-size: 18px;
 }
 
 .agora {

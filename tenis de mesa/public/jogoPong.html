@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../public/css/jogoPong.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_jogo">
+        <div id="div_jogadorUser" class="barra esquerda"></div>
+        <div id="div_jogadorMaquina" class="barra direita"></div>
+        <div id="div_bolinha"></div>
+    </div>
+    <div id="Painel">
+        <div class="itemPainel">
+            <label>PONTOS</label>
+            <input type="text" id="input_placar">
+        </div>
+        <div class="itemPainel">
+            <button id="botaoIniciar">Iniciar Partida</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    // Elementos
+    var botaoInicio;
+    var bola;
+    var jogador;
+    var maquina;
+    var Painelplacar
+
+    // Controle de animação
+    var jogo;
+    var frames;
+
+    // Posições
+    var posbolaX;
+    var posbolaY;
+
+    var posJogadorX;
+    var posJogadorY;
+
+    var posMaquinaX;
+    var posMaquinaY;
+
+    // Direções de acordo com a tecla
+    var direcaoJogadorY;
+
+    // Posições iniciais
+    var posinicioJogadorX = 180;
+    var posinicioMaquinaX = 180;
+    var posInicioBolaX = 475;
+    var posInicioBolaY = 240;
+
+    // Tamanhos
+    var mesaX = 0;
+    var mesaY = 0;
+    var mesaAltura = 500;
+    var mesaLargura = 960;
+
+    //Direção dos elementos do jogo
+    var bolaX;
+    var bolaY;
+
+    var jogadorY = 0;
+    var maquinaY = 0;
+
+    // Velocidade
+    var velocidadeBola;
+    var velocidadeJogador;
+    var velocidadeMaquina;
+
+    // Controle
+    var pontos = 0;
+    var tecla;
+</script>

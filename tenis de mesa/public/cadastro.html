@@ -45,16 +45,8 @@
           </div>
           <div id="div_erroNome"></div>
           <div class="campo">
-            <span>CPF:</span><br>
-            <input id="cpf_input" type="text" placeholder="000.000.000-00" />
-          </div>
-          <div class="campo">
             <span>E-mail:</span><br>
             <input id="email_input" type="text" placeholder="nome@domínio.com" />
-          </div>
-          <div class="campo">
-            <span>Telefone - Celular</span><br>
-            <input id="input_telefoneCelular" type="text" placeholder="(99) 99999-9999" />
           </div>
           <div class="campo">
             <span>Senha:</span><br>
@@ -93,12 +85,9 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
-    var cpfVar = cpf_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
 
     // Validações
 
@@ -145,24 +134,12 @@
       return false;
     }
 
-    // validar cpf.lenght > 11
-    if (cpfVar.length < 11 || cpfVar.length > 11) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro: CPF com menos ou mais de 11 dígitos)";
-
-      finalizarAguardar();
-      return false;
-    }
-
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
-      cpfVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      confirmacaoSenhaVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -197,10 +174,8 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
-        cpfServer: cpfVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
       }),
     })
       .then(function (resposta) {

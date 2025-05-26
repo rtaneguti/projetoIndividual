@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../public/css/jogoPong.css">
     <title>Document</title>
 </head>
+
 <body>
     <div id="div_jogo">
         <div id="div_jogadorUser" class="barra esquerda"></div>
@@ -23,6 +25,7 @@
         </div>
     </div>
 </body>
+
 </html>
 
 <script>
@@ -34,7 +37,7 @@
     var Painelplacar
 
     // Controle de animação
-    var jogo;
+    var jogar;
     var frames;
 
     // Posições
@@ -51,8 +54,8 @@
     var direcaoJogadorY;
 
     // Posições iniciais
-    var posinicioJogadorX = 180;
-    var posinicioMaquinaX = 180;
+    var posinicioJogadorY = 180;
+    var posinicioMaquinaY = 180;
     var posInicioBolaX = 475;
     var posInicioBolaY = 240;
 
@@ -66,7 +69,6 @@
     var bolaX;
     var bolaY;
 
-    var jogadorY = 0;
     var maquinaY = 0;
 
     // Velocidade
@@ -77,4 +79,48 @@
     // Controle
     var pontos = 0;
     var tecla;
+
+    var jogo = false;
+
+    function teclapBaixo() {
+
+    }
+
+    function teclapCima() {
+
+    }
+
+    function jogar() {
+        if(jogo) {
+
+        }
+        frames = requestAnimationFrame(jogo);
+    }
+
+    function iniciarVariáveis() {
+        if (!jogo) {
+            cancelAnimationFrame(frames);
+            direcaoJogadorY = 0;
+            posbolaX = posInicioBolaX;
+            posbolaY = posInicioBolaY;
+            posJogadorY = 0;
+            posMaquinaY = posinicioMaquinaY;
+            jogo();
+        }
+    }
+
+    function iniciarJogo() {
+        botaoInicio = document.getElementById("botaoIniciar");
+        botaoInicio.addEventListener("click", iniciarVariáveis);
+        jogador = document.getElementById("div_jogadorUser");
+        maquina = document.getElementById("div_jogadorMaquina");
+        bola = document.getElementById("div_bolinha");
+        Painelplacar = document.getElementById("input_placar");
+        document.addEventListener("keydown", teclapBaixo);
+        document.addEventListener("keyup", teclapCima);
+    }
+
+    window.addEventListener("load", iniciarJogo);
+
+
 </script>

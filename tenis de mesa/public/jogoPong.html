@@ -4,124 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Pong - Teste</title>
 
-    <link rel="stylesheet" href="../public/css/jogoPong.css">
-    <link rel="shortcut icon" href="./assets/icon/favicon-16x16.png" type="image/x-icon">
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles tenis/pong-teste.css">
 </head>
 
 <body>
-    <div id="div_jogo">
-        <div id="div_jogadorUser" class="barra esquerda"></div>
-        <div id="div_jogadorMaquina" class="barra direita"></div>
-        <div id="div_bolinha"></div>
+    <section class="GAMEPONG">
+        <div class="placarJogadores">
+            <div id="placarJogador1">0</div>
+            <div id="xjogo">X</div>
+            <div id="placarJogador2">0</div>
+        </div>
+
+    <div class="containerJogo">
+        <div id="mesaPong">
+            <div id="raquete1"></div>
+            <div id="raquete2"></div>
+            <div id="bola"></div>
+        </div>
     </div>
-    <div id="Painel">
-        <div class="itemPainel">
-            <label>PONTOS</label>
-            <input type="text" id="input_placar">
+    </section>
+
+    <div id="menuInicio">
+
+        <div class="configuracoesJogo">
+            <label>Jogador 1:</label>
+            <input type="text" id="input_nomeJogador1" placeholder="Nome Jogador 1"><br>
+
+            <label>Jogador 2:</label>
+            <input type="text" id="input_nomeJogador2" placeholder="Nome Jogador 2"><br>
+
+            <label>Pontos para Vencer:</label>
+            <input type="number" id="input_pontosNecessarios" min="5" max="11"><br>
         </div>
-        <div class="itemPainel">
-            <button id="botaoIniciar">Iniciar Partida</button>
-        </div>
+
+        <button id="botaoIniciar" onclick="iniciarNovoJogo()">Iniciar Jogo</button>
     </div>
 </body>
-
 </html>
 
 <script>
-    // Elementos
-    var botaoInicio;
-    var bola;
-    var jogador;
-    var maquina;
-    var Painelplacar
-
-    // Controle de animação
-    var jogar;
-    var frames;
-
-    // Posições
-    var posbolaX;
-    var posbolaY;
-
-    var posJogadorX;
-    var posJogadorY;
-
-    var posMaquinaX;
-    var posMaquinaY;
-
-    // Direções de acordo com a tecla
-    var direcaoJogadorY;
-
-    // Posições iniciais
-    var posinicioJogadorY = 180;
-    var posinicioMaquinaY = 180;
-    var posInicioBolaX = 475;
-    var posInicioBolaY = 240;
-
-    // Tamanhos
-    var mesaX = 0;
-    var mesaY = 0;
-    var mesaAltura = 500;
-    var mesaLargura = 960;
-
-    //Direção dos elementos do jogo
-    var bolaX;
-    var bolaY;
-
-    var maquinaY = 0;
-
-    // Velocidade
-    var velocidadeBola;
-    var velocidadeJogador;
-    var velocidadeMaquina;
-
-    // Controle
-    var pontos = 0;
-    var tecla;
-
-    var jogo = false;
-
-    function teclapBaixo() {
-
-    }
-
-    function teclapCima() {
-
-    }
-
-    function jogar() {
-        if(jogo) {
-
-        }
-        frames = requestAnimationFrame(jogo);
-    }
-
-    function iniciarVariáveis() {
-        if (!jogo) {
-            cancelAnimationFrame(frames);
-            direcaoJogadorY = 0;
-            posbolaX = posInicioBolaX;
-            posbolaY = posInicioBolaY;
-            posJogadorY = 0;
-            posMaquinaY = posinicioMaquinaY;
-            jogo();
-        }
-    }
-
-    function iniciarJogo() {
-        botaoInicio = document.getElementById("botaoIniciar");
-        botaoInicio.addEventListener("click", iniciarVariáveis);
-        jogador = document.getElementById("div_jogadorUser");
-        maquina = document.getElementById("div_jogadorMaquina");
-        bola = document.getElementById("div_bolinha");
-        Painelplacar = document.getElementById("input_placar");
-        document.addEventListener("keydown", teclapBaixo);
-        document.addEventListener("keyup", teclapCima);
-    }
-
-    window.addEventListener("load", iniciarJogo);
-
-
+    
 </script>

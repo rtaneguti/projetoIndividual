@@ -29,9 +29,14 @@ function finalizarAguardar(texto) {
     divAguardar.style.display = "none";
 
     var divErrosLogin = document.getElementById("div_erros_login");
-    if (texto) {
+    if (texto == "Houve um erro ao tentar realizar o cadastro!" || 
+        texto == "Houve um erro ao tentar realizar o login!" ||
+        texto == "Email e/ou senha inválido(s)"
+    ) {
         divErrosLogin.style.display = "flex";
         divErrosLogin.innerHTML = texto;
+    } else {
+        divErrosLogin.style.display = "none";
     }
 }
 

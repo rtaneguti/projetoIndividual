@@ -2,14 +2,17 @@ CREATE DATABASE individual;
 
 USE individual;
 
-show tables;
-
 CREATE TABLE Usuario (
 idUsuario INT PRIMARY KEY auto_increment,
 nome VARCHAR(100) NOT NULL,
 email VARCHAR(100) NOT NULL,
 senha VARCHAR(60) NOT NULL
 );
+
+ALTER TABLE Usuario 
+	MODIFY COLUMN nome VARCHAR(100) NOT NULL, 
+	MODIFY COLUMN email VARCHAR(100) NOT NULL UNIQUE, 
+	MODIFY COLUMN senha VARCHAR(60) NOT NULL;
 
 CREATE TABLE resultado_partida (
 idPartidas INT PRIMARY KEY,
@@ -24,6 +27,6 @@ CONSTRAINT fkResultadoUser
 );
 
 SELECT * FROM Usuario;
-truncate table Usuario;
+
 INSERT INTO Usuario (nome, email, senha) VALUES 
 	('Rafael Taneguti', 'rafael.taneguti@gmail.com', 'caroline21#');

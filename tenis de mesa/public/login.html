@@ -9,8 +9,9 @@
     <title>RQTable Tennis | Login</title>
 
     <link rel="stylesheet" href="../css/cad e log.css">
+    <link rel="shortcut icon" href="./assets/icon/favicon-16x16.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script src="../public/js/sessao.js"></script>
+    <script src="./js/sessao.js"></script>
 </head>
 
 <body>
@@ -58,6 +59,12 @@
                         <input id="senha_input" type="password" placeholder="Digite sua senha">
                     </div>
                     <button onclick="entrar()" class="botao">Entrar</button>
+
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="./assets/circle-loading.gif" alt="loading-gif">
+                    </div>
+
+                    <div id="div_erros_login"></div>
                 </div>
 
             </div>
@@ -95,9 +102,7 @@
         else {
             setInterval(sumirMensagem, 5000)
         }
-
         
-
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
@@ -149,5 +154,4 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
-
 </script>

@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="../css/cad e log.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="../public/js/sessao.js"></script>
 </head>
 
 <body>
@@ -37,7 +38,11 @@
 
 
     <div class="login">
-
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
         <div class="container">
             <div class="card-card-login">
                 <h2>Olá, seja bem-vindo!</h2>
@@ -52,7 +57,7 @@
                         <br>
                         <input id="senha_input" type="password" placeholder="Digite sua senha">
                     </div>
-                    <button onclick="" class="botao">Entrar</button>
+                    <button onclick="entrar()" class="botao">Entrar</button>
                 </div>
 
             </div>
@@ -76,7 +81,7 @@
 <script>
 
     function entrar() {
-        aguardar();
+        // aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -90,6 +95,8 @@
         else {
             setInterval(sumirMensagem, 5000)
         }
+
+        
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);

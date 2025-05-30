@@ -14,16 +14,28 @@ ALTER TABLE Usuario
 	MODIFY COLUMN email VARCHAR(100) NOT NULL UNIQUE, 
 	MODIFY COLUMN senha VARCHAR(60) NOT NULL;
 
-CREATE TABLE resultado_partida (
-idPartidas INT PRIMARY KEY,
-dtPartida DATETIME,
-duracao_partida INT,
-pontuacao_jogador INT,
-pontuacao_maquina INT, 
+CREATE TABLE Jogo (
+idJogo INT PRIMARY KEY auto_increment,
+nome VARCHAR(45) NOT NULL,
+descricao VARCHAR(100),
+data_lancamento DATE
+);
+
+CREATE TABLE Partida (
+idPartida INT, 
+fkJogo INT,
 fkUsuario INT,
-CONSTRAINT fkResultadoUser 
+pontuacao_maxima INT,
+pontosJogador1 INT, 
+pontosJogador2 INT, 
+data_partida DATETIME,
+CONSTRAINT pkPartida PRIMARY KEY (idPartida, fkJogo, fkUsuario),
+CONSTRAINT fkPartidaUsuario 
 	FOREIGN KEY (fkUsuario)
-    REFERENCES Usuario(idUsuario)
+    REFERENCES Usuario(idUsuario), 
+CONSTRAINT fkPartidaJogo 
+	FOREIGN KEY (fkJogo)
+    REFERENCES Jogo(idJogo)
 );
 
 SELECT * FROM Usuario;

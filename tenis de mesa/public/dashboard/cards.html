@@ -19,7 +19,7 @@
         rel="stylesheet">
 </head>
 
-<body onload= "validarSessao(), exibirAquarios(), atualizacaoPeriodica()">
+<body onload="validarSessao(), exibirAquarios(), atualizacaoPeriodica()">
     <div class="janela">
 
         <div class="header-left dash-header">
@@ -32,17 +32,17 @@
 
             <!-- <div class="hello">
                 <h3>CPF: <span id="b_cpf">usuário</span></h3>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Aquários</h3>
             </div> -->
+
+            <div class="btn-nav-white">
+                    <h3>Início</h3>
+            </div> 
 
             <div class="btn-nav-white">
                 <a href="./jogoPong.html">
                     <h3>Jogo Pong</h3>
                 </a>
-            </div> 
+            </div>
 
             <div class="btn-nav-white">
                 <a href="./dashboard.html">
@@ -54,6 +54,15 @@
                 <h3>Sair</h3>
             </div>
 
+        </div>
+
+        <div class="cardBoasVindas">
+            <div class="boasVindasTitle">
+                <h1> Seja bem vindo (a)!</h1>
+            </div> 
+            <div class="cardIMG">
+                <img src="../assets/imgs/Cerimônia de entrega das medalhas e troféu.jpg" alt="">
+            </div>
         </div>
 
         <!-- <div class="dash">
@@ -98,23 +107,24 @@
 
 <script>
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
+    // function exibirAquarios() {
+    //     JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
+    //         document.getElementById("cardAquarios").innerHTML += `
+    //                 <div class="card-aquario">
+    //                     <div class="title-aquario">
+    //                         <h1>${item.descricao}</h1>
+    //                     </div>
+    //                     <div class="desc-aquario">
+    //                     <div class="temperatura">
+    //                         <p id="temp_aquario_${item.id}">-°C</p>
+    //                     </div>
+    //                     <div class="cor-alerta" id="card_${item.id}"></div>
+    //                 </div>
+    //                 </div>
+    //                 `
+    //     });
+    // }
 
 </script>
+
 </html>

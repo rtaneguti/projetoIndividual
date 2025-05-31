@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo Pong</title>
 
-    <link rel="stylesheet" href="../public/css/jogoPong.css">
+    <link rel="stylesheet" href="../css/jogoPong.css">
 </head>
 
 <body>
@@ -40,6 +40,10 @@
         </div>
 
         <button id="botaoIniciar" onclick="iniciarNovoJogo()">Iniciar Jogo</button>
+        <br><br>
+        <div>
+            <a href="cards.html">VOLTAR</a>
+        </div>
     </div>
 </body>
 
@@ -286,4 +290,9 @@
 
     // Função para iniciar a repetição do jogo a cada 16 ms
     setInterval(atualizarJogo, 16);
+
+
+    // Inserir resultados no Banco de Dados
+
+    
 </script>

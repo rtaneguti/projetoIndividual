@@ -9,7 +9,7 @@
     --verde: #008973;
     --branco: #ffffff;
     --azul_marinho: #00446d;
-    --laranja-vibrante: #FF6600;
+    --laranja_vibrante: #FF6600;
 }
 
 body {
@@ -212,7 +212,7 @@ section:not(:last-of-type) {
 /* BOTÃO*/
 
 .botao-pong {
-    background-color: var(--laranja-vibrante);
+    background-color: var(--laranja_vibrante);
     color: white;
     padding: 15px 30px;
     font-size: 18px;

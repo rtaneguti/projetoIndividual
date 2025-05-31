@@ -14,6 +14,7 @@ body {
     --verde: #008973;
     --branco: #ffffff;
     --azul_marinho: #00446d;
+    --laranja_vibrante: #FF6600;
 }
 
 /* HEADER */
@@ -301,18 +302,19 @@ video {
 /* Botões */
 
 .botao-pong {
-    background-color: var(--verde);
+    background-color: var(--laranja_vibrante);
     color: white;
     padding: 15px 30px;
     font-size: 18px;
     border-radius: 10px;
     text-decoration: none;
     margin-top: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .botao-pong:hover {
-    background-color: #006657;
+    background-color: #e65c00;
+    transform: scale(1.05);
 }
 
 /*FOOTER*/

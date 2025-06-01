@@ -113,7 +113,7 @@ body {
 /* pagina graficos */
 
 .dash-header {
-  background-color: #212124;
+  background-color: rgb(56, 117, 102);
 }
 
 .dash {
@@ -360,7 +360,7 @@ canvas {
   width: 80%;
   height: 100vh;
   margin-left: 20%;
-  background-color:rgb(56, 117, 102) ;
+  background-color:rgb(56, 117, 102);
 } 
 
 .boasVindasTitle {

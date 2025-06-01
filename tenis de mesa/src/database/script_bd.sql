@@ -22,13 +22,15 @@ data_lancamento DATE
 );
 
 CREATE TABLE Partida (
-idPartida INT, 
+idPartida INT auto_increment, 
 fkJogo INT,
 fkUsuario INT,
+nome_jogador1 VARCHAR(50),
+nome_jogador2 VARCHAR(50),
 pontuacao_maxima INT,
-pontosJogador1 INT, 
-pontosJogador2 INT, 
-data_partida DATETIME,
+pontos_jogador1 INT, 
+pontos_jogador2 INT, 
+data_partida DATETIME default current_timestamp,
 CONSTRAINT pkPartida PRIMARY KEY (idPartida, fkJogo, fkUsuario),
 CONSTRAINT fkPartidaUsuario 
 	FOREIGN KEY (fkUsuario)
@@ -38,7 +40,13 @@ CONSTRAINT fkPartidaJogo
     REFERENCES Jogo(idJogo)
 );
 
-SELECT * FROM Usuario;
+SHOW TABLES;
 
+SELECT * FROM Usuario;
 INSERT INTO Usuario (nome, email, senha) VALUES 
 	('Rafael Taneguti', 'rafael.taneguti@gmail.com', 'caroline21#');
+
+SELECT * FROM Partida;
+INSERT INTO Jogo VALUES 
+	(default, 'Jogo Pong', 'Dois jogadores controlam raquetes para rebater uma bola. Vence quem alcançar a pontuação máxima.', '2025-06-03');
+    

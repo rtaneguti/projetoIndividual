@@ -53,7 +53,6 @@
     // Variáveis do jogo para uso do DOM (manipular objetos da página)
 
     var menuInicio = document.getElementById("menuInicio");
-    var modoJogo = document.getElementById("select_modoJogo");
     var nomeJogador1 = document.getElementById("input_nomeJogador1");
     var nomeJogador2 = document.getElementById("input_nomeJogador2");
     var pontuacaoMaxima = document.getElementById("input_pontosNecessarios");
@@ -203,8 +202,13 @@
         if (estadoJogo == "inicio" || estadoJogo == "fimDeJogo") {
             menuInicio.style.display = "flex";
             if (estadoJogo == 'fimDeJogo') {
+                cadastrarPartida();
+
                 input_nomeJogador1.value = "";
                 input_nomeJogador2.value = "";
+
+                estadoJogo = "inicio";
+                
             }
         } else {
             menuInicio.style.display = "none";
@@ -291,8 +295,48 @@
     // Função para iniciar a repetição do jogo a cada 16 ms
     setInterval(atualizarJogo, 16);
 
+    
 
     // Inserir resultados no Banco de Dados
 
-    
+    function cadastrarPartida() {
+
+        // var idUsuario = JSON.parse(sessionStorage.ID_USUARIO);
+
+        // var fkUsuario = fkUsuario;
+        var fkUsuario = Number(sessionStorage.ID_USUARIO);
+        var nome_jogador1Var = input_nomeJogador1.value;
+        var nome_jogador2Var = input_nomeJogador2.value;
+        var pontuacao_maximaVar = input_pontosNecessarios.value;
+        var pontos_jogador1Var = pontosJogador1;
+        var pontos_jogador2Var = pontosJogador2;
+
+        fetch("/rota_jogo/cadastrarPartida", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                // fkUsuarioServer: fkUsuarioVar,
+                fkUsuarioServer: fkUsuario,
+                nome_jogador1Server: nome_jogador1Var,
+                nome_jogador2Server: nome_jogador2Var,
+                pontuacao_maximaServer: pontuacao_maximaVar,
+                pontos_jogador1Server: pontos_jogador1Var,
+                pontos_jogador2Server: pontos_jogador2Var,
+            }),
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log("Dados registrados no Banco de Dados");
+                } else {
+                    console.log("Erro ao registrar os dados no Banco");
+                }
+            }).catch(function (erro) {
+                console.log("erro ao se comunicar com servidor.");
+                console.log("erro no fetch:", erro);
+            });
+    }
 </script>

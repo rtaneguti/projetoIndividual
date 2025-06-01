@@ -121,10 +121,72 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: #00446d;
   height: 100vh;
   overflow: auto;
 }
+
+.linha1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  padding: 10px;
+}
+
+.kpi {
+  background-color: #008973;
+  color: whitesmoke;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kpiTitle { 
+    font-size: 20px;
+    margin-bottom: 18px; 
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.linha2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.ranking-container {
+  background-color: #005f90;
+  color: whitesmoke;
+  border-radius: 15px;
+  width: 90%;
+  text-align: center;
+}
+
+.rankingTitle {
+    font-size: 20px;
+    margin-bottom: 35px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.ranking-lista li {
+    background-color: #007bb6; 
+    margin-bottom: 10px; 
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 16px;
+}
+
 
 .area-parametros-alerta {
   /* border: 2px solid pink; */
@@ -349,7 +411,7 @@ canvas {
   justify-content: space-evenly;
   align-items: center;
   border-right: 3px solid ;
-  background-color: #00446d;
+  background-color: black;
 }
 
 .cardBoasVindas {
@@ -360,7 +422,7 @@ canvas {
   width: 80%;
   height: 100vh;
   margin-left: 20%;
-  background-color:rgb(56, 117, 102);
+  background-color: #00446d;
 } 
 
 .boasVindasTitle {

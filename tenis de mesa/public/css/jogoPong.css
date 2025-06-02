@@ -110,6 +110,16 @@ top = (alturaMesa/2) - (alturaRaquete/2);
     text-align: center;
 }
 
+#span {
+    color: white;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    width: 300px;
+    height: 40px;
+}
+
 .configuracoesJogo {
     margin: 10px 0;
     display: flex;

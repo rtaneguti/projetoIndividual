@@ -40,6 +40,9 @@ CONSTRAINT fkPartidaJogo
     REFERENCES Jogo(idJogo)
 );
 
+ALTER TABLE Partida MODIFY COLUMN nome_jogador1 VARCHAR(100),
+	MODIFY COLUMN nome_jogador2 VARCHAR(100);
+
 SHOW TABLES;
 
 SELECT * FROM Usuario;
@@ -47,6 +50,7 @@ INSERT INTO Usuario (nome, email, senha) VALUES
 	('Rafael Taneguti', 'rafael.taneguti@gmail.com', 'caroline21#');
 
 SELECT * FROM Partida;
+
 INSERT INTO Jogo VALUES 
 	(default, 'Jogo Pong', 'Dois jogadores controlam raquetes para rebater uma bola. Vence quem alcançar a pontuação máxima.', '2025-06-03');
-    
+ALTER TABLE Partida ADD COLUMN vencedor VARCHAR(50) NOT NULL;

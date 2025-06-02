@@ -30,7 +30,7 @@
 
         <div class="configuracoesJogo">
             <label>Jogador 1:</label>
-            <input type="text" id="input_nomeJogador1" placeholder="Nome Jogador 1"><br>
+            <span type="text" id="input_nomeJogador1">UserProfile</span><br>
 
             <label>Jogador 2:</label>
             <input type="text" id="input_nomeJogador2" placeholder="Nome Jogador 2"><br>
@@ -65,6 +65,8 @@
 
     var pontosJogador1 = 0;
     var pontosJogador2 = 0;
+
+    var vencedor = "";
 
     // Variáveis dos elementos
 
@@ -184,9 +186,11 @@
             if (pontosJogador1 >= pontosParaVencer) {
                 estadoJogo = "fimDeJogo";
                 alert(`${nomeJogador1.value} venceu a partida!`)
+                vencedor = nomeJogador1.value;
             } else if (pontosJogador2 >= pontosParaVencer) {
                 estadoJogo = "fimDeJogo";
                 alert(`${nomeJogador2.value} venceu a partida!`)
+                vencedor = nomeJogador2.value;
             }
 
             // Aplicando as posições aos elementos e atualizar pontuação na tela
@@ -215,10 +219,14 @@
         }
     }
 
+    var nomeJ1 = sessionStorage.NOME_USUARIO;
+    nomeJogador1.innerHTML = nomeJ1;
+
     // Função para iniciar uma partida
     function iniciarNovoJogo() {
-        nomeJ1 = input_nomeJogador1.value;
-        nomeJ2 = input_nomeJogador2.value;
+        var nomeJ1 = sessionStorage.NOME_USUARIO;
+        input_nomeJogador1.value = nomeJ1;
+        var nomeJ2 = input_nomeJogador2.value;
         pontosParaVencer = input_pontosNecessarios.value;
 
         if (nomeJ1 == "" || nomeJ2 == "") {
@@ -310,6 +318,7 @@
         var pontuacao_maximaVar = input_pontosNecessarios.value;
         var pontos_jogador1Var = pontosJogador1;
         var pontos_jogador2Var = pontosJogador2;
+        var vencedorVar = vencedor;
 
         fetch("/rota_jogo/cadastrarPartida", {
             method: "POST",
@@ -326,6 +335,7 @@
                 pontuacao_maximaServer: pontuacao_maximaVar,
                 pontos_jogador1Server: pontos_jogador1Var,
                 pontos_jogador2Server: pontos_jogador2Var,
+                vencedorServer: vencedorVar,
             }),
         })
             .then(function (resposta) {

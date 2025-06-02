@@ -10,6 +10,7 @@ function cadastrarPartida(req, res) {
     var pontuacao_maxima = req.body.pontuacao_maximaServer;
     var pontos_jogador1 = req.body.pontos_jogador1Server;
     var pontos_jogador2 = req.body.pontos_jogador2Server;
+    var vencedor = req.body.vencedorServer;
 
     console.log("Entrei no controller")
     console.log("fkUsuario:" + fkUsuario)
@@ -18,6 +19,7 @@ function cadastrarPartida(req, res) {
     console.log("pontuacao_maxima:" + pontuacao_maxima)
     console.log("pontos_jogador1:" + pontos_jogador1)
     console.log("pontos_jogador2:" + pontos_jogador2)
+    console.log("vencedor:" + vencedor)
 
     // if (idPartida == undefined) {
     //     res.status(400).send("Seu nome está undefined!");
@@ -37,6 +39,8 @@ function cadastrarPartida(req, res) {
         res.status(400).send("Os pontos do jogador 1 está undefined!");
     } else if (pontos_jogador2 == undefined) {
         res.status(400).send("Os pontos do jogador 2 está undefined!");
+    } else if (vencedor == undefined) {
+        res.status(400).send("O vencedor está undefined");
     }
     else {
         console.log("Passei pela validação do control")
@@ -46,7 +50,8 @@ function cadastrarPartida(req, res) {
             nome_jogador2, 
             pontuacao_maxima, 
             pontos_jogador1, 
-            pontos_jogador2
+            pontos_jogador2,
+            vencedor
         ).then(function (resultado) {
             res.status(200).send("Dados inseridos com sucesso");
             console.log("Deu certo")

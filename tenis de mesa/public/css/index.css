@@ -280,11 +280,11 @@ video {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 8%;
+    margin-left: 25%;
 }
 
 .boxText4 p {
-    text-align: justify;
+    text-align: center;
     margin-left: 8%;
     margin-right: 8%;
     font-size: 18px;
